@@ -47,6 +47,7 @@ class CallBackNegativeTest {
                 driver.findElement(By.xpath("//span[@data-test-id='name'][contains(@class,'input_invalid')]//span[@class='input__sub']"))
                         .getText().trim());
     }
+
     @Test
     void shouldBeFailedEmptyNameInput() {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+78001675812");
@@ -56,6 +57,7 @@ class CallBackNegativeTest {
                 driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim());
         assertTrue(driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).isDisplayed());
     }
+
     @Test
     void shouldBeFailedIncorrectPhoneInput() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Анна");
@@ -65,6 +67,7 @@ class CallBackNegativeTest {
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.",
                 driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim());
     }
+
     @Test
     void shouldBeFailedEmptyPhoneInput() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Анна");
@@ -73,6 +76,7 @@ class CallBackNegativeTest {
         assertEquals("Поле обязательно для заполнения",
                 driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim());
     }
+
     @Test
     void shouldBeFailedUncheckedCheckbox() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Анна");
