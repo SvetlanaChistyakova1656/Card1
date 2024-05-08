@@ -50,8 +50,8 @@ class CallBackNegativeTest {
 
     @Test
     void shouldBeFailedEmptyNameInput() {
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+78001675812");
-        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+78001675812");
+        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         assertEquals("Поле обязательно для заполнения",
                 driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim());
